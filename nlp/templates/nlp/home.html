@@ -1,0 +1,13 @@
+<h1>Predict item category</h1>
+
+<p>Enter title : </p>
+<form action="{% url 'home' %}" method="POST">
+    <input type="text", name="inputed_value">
+    {% csrf_token %}
+    <button type="submit">Send</button>
+</form>
+
+
+{% if pred %}
+    <h1>Prediction: {{pred}}</h1>
+{% endif %}
